@@ -1,16 +1,20 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css";
 
 export default function SearchBar({ onSubmit }) {
-  const [term, setTerm] = useState("");
-
-  const handleChange = (e) => {
-    setTerm(e.target.value);
-  };
+  const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(term);
+
+    if (query.trim() === "") {
+      toast.error("Lütfen aramak için bir metin girin!");
+      return;
+    }
+
+    onSubmit(query.trim());
+    setQuery("");
   };
 
   return (
@@ -22,11 +26,13 @@ export default function SearchBar({ onSubmit }) {
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
-          value={term}
-          onChange={handleChange}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button type="submit" className={styles.button}>Search</button>
       </form>
     </header>
   );
 }
+
+

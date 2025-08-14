@@ -1,13 +1,15 @@
 import styles from "./ImageCard.module.css";
 
-export default function ImageCard({ image, onClick }) {
+export default function ImageCard({ src, alt, onClick }) {
   return (
-    <div className={styles.card} onClick={onClick}>
+    <div className={styles.card}>
       <img
-        src={image.urls.small}
-        alt={image.alt_description || "Image"}
-        className={styles.img}
+        src={src}
+        alt={alt || "Image"}
+        className={styles.image}
+        onClick={onClick} // Doğrudan <img>’e eklendi
       />
     </div>
   );
 }
+
