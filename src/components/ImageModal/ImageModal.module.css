@@ -1,0 +1,56 @@
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.modal {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+
+.modal img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+
+.info {
+    text-align: left;
+}
+
+.info h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.info p {
+    margin: 4px 0;
+}
+
+.info a {
+    color: #3f51b5;
+    text-decoration: none;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
